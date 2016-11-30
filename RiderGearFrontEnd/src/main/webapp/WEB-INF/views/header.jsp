@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" isELIgnored="false"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,11 +30,18 @@
      </li>
        </ul>
     
-    
+    <c:if test ="${sessionScope.mt eq null}">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="Signup "><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
+    </c:if>
+    <c:if test="${sessionScope.mt ne null }">
+    <h3> YO! ${sessionScope.mt }</h3>
+    <ul class="nav navbar-nav navbar-right">
+    <li> <a href="Logout">Logout</a></li>
+    </ul>
+    </c:if>
   </div>
 </nav>
 </body>

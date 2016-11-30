@@ -1,9 +1,12 @@
 package com.ridergearfrontend.controller;
  
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -24,7 +27,7 @@ import rider.model.RiderModel;
 
 @Controller
 public class Homecontroller {
-	
+	HttpSession session;
 	
 	private ProductDAO pd;
 	
@@ -72,16 +75,25 @@ AnnotationConfigApplicationContext appobj = new AnnotationConfigApplicationConte
 	   
 	  }
 	
+	@RequestMapping("/Logout")
+    public ModelAndView Logout() {
+		session.invalidate();
+	    return new ModelAndView("Home");
+	   
+	  }
+	
 	
 	
 	
 	
 	
 	@RequestMapping("/Signin")
-    public ModelAndView register(HttpServletRequest req) {
+    public ModelAndView register(HttpServletRequest req) throws ServletException,IOException {
+		
+		session=req.getSession(true);
 		String s= req.getParameter("username");
 		String p=req.getParameter("password");
-		List<RiderModel>ls=userd.list1();
+		List<RiderModel>ls=userd.list1(s,p);
 		System.out.println(s);
 		System.out.println(p);
 		System.out.println(ls);
@@ -96,13 +108,22 @@ AnnotationConfigApplicationContext appobj = new AnnotationConfigApplicationConte
 				if(ls.get(i).getRoleId().equals("ADMIN_ROLE"))
 				{
 				
+					System.out.println("This is session object  "+session);
+					System.out.println(ls.get(i).getUsername());
+					session.setAttribute("mt", ls.get(i).getUsername());
+					
 				mv.setViewName("/AP");
 				
 				}
 				else
 				{
+					session.setAttribute("mt",ls.get(i).getUsername());
 					mv.setViewName("Home");
 				}
+			}
+			else
+			{
+				mv.setViewName("Login");
 			}
 		}
 		}

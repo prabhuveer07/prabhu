@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import rider.model.Product;
 import rider.model.RiderModel;
  
 @Repository
@@ -47,10 +46,10 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 
-	public List<RiderModel> list1() {
+	public List<RiderModel> list1(String username,String password) {
 		Session session=sessionFactory.openSession();
 		@SuppressWarnings("unchecked")
-		List<RiderModel> lists1=session.createQuery("from RiderModel").list();
+		List<RiderModel> lists1=session.createQuery("from RiderModel user WHERE user.username='"+username+"' and user.password='"+password+"'").list();
 		return lists1;
 	}
 
@@ -59,6 +58,9 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+	
 		
 
 }

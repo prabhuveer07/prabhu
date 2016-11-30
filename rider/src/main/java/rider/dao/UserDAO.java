@@ -10,5 +10,5 @@ public interface UserDAO {
     public void Update(RiderModel obj);
     public void insert(RiderModel obj);
     public void delete(RiderModel obj); 
-    public List<RiderModel> list1();
+    public List<RiderModel> list1(String username,String password);
 }
