@@ -19,7 +19,7 @@
       <a style="color:#2980b9" class="navbar-brand" href="Home"><span class="glyphicons glyphicons-tower"></span><em>RIDER GEAR</em></a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="Home">Home</a></li>
+      
       
       
       <li><a href="AP">UPDATE</a></li>
