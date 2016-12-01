@@ -1,5 +1,13 @@
 # prabhu
 
+RIDER GEAR is an E-COMMERCE website where you can browse and purchase products and also be shipped for at your doorstep
+
+This application also contains your own account its safe as this site contains security   
+
+This website holds cash on delivery and online payments
+
+
+
 
 1.install the necessary softwares to run the application
 
