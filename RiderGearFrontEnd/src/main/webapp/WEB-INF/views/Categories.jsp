@@ -35,10 +35,46 @@ height:400px;
    
 
 <div class="container">
+
   <h1 style="color:yellow;"><em>RIDER GEAR</em></h1>
   <p style="color:yellow;"><em>PREMIUM MOTOR SPORT GEAR</em></p>
 </div>
 
+
+
+
+<div id="Categories" class="mailbox col-sm-6 col-sm-offset-3">
+<div class="panel panel-default">
+<div class="panel-heading">
+<title>CATEGORIES</title>
+<table border="0" class="table table-striped table-hover" >
+<tr>
+
+            <th>manufacturer</th>
+			<th>name</th>
+			<th>price</th>
+</tr>
+
+<c:forEach items="${cat}" var="lion">
+
+<tr>
+         <td>${lion.getManufacturer() }</td>
+         <td>${lion.getName() }</td>
+         <td>${lion.getPrice() }</td>
+         
+         <td>
+         <a href="listPost/${lion.getId()}"><span class="glyphicon glyphicon-camera"></span></a>
+         </td>
+         
+         
+         
+   </tr>
+</c:forEach>
+</table>
+</div>
+</div>
+
+</div>
 
 </body>
 </html>

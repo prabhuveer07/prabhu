@@ -20,12 +20,12 @@
       <li><a href="ABOUT US">ABOUT US</a></li>
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="Categories">CATEGORIES<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="Categories">GP</a></li>
-          <li><a href="Categories">MOTO CROSS</a></li>
-          <li><a href="Categories">RACE SUITS</a></li>
-          <li><a href="Categories">GLOVES</a></li>
-          <li><a href="Categories">BOOTS</a></li>
-          <li><a href="Categories">PROTECTORS</a></li>
+          <li><a href="Categories?lion=GP">GP</a></li>
+          <li><a href="Categories?lion=MOTO CROSS">MOTO CROSS</a></li>
+          <li><a href="Categories?lion=RACE SUITS">RACE SUITS</a></li>
+          <li><a href="Categories?lion=GLOVES">GLOVES</a></li>
+          <li><a href="Categories?lion=BOOTS">BOOTS</a></li>
+          <li><a href="Categories?lion=PROTECTORS">PROTECTORS</a></li>
      </ul>
      </li>
        </ul>

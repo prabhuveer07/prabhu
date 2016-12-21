@@ -32,7 +32,7 @@
   <div id="Signup" class="mailbox col-sm-6 col-sm-offset-3">
   <div class="panel panel-default">
   <div class="panel-heading">
-  <form:form method="POST" action="./productpost" commandName="prod">
+  <form:form method="POST" action="./productpost" commandName="prod" enctype="multipart/form-data">
   
   
   <h2>ADD PRODUCT</h2>
@@ -68,7 +68,11 @@
     
     <tr>
         <td colspan="2">
+            
+            <p><label for="image">Choose Image</label></p>
+            <p><input name="file" id="fileToUpload" type="file" /></p> 
             <input type="submit" value="Submit"/>
+            
         </td>
     </tr>
 </table>  

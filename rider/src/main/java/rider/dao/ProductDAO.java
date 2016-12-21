@@ -11,7 +11,7 @@ public interface ProductDAO {
 	    public void delete(int id); 
 	    public List<Product> list1();
 	    public Product prodbyid(int id);
-		
+		public List<Product> prod (String category);
 		
 	    
 }
