@@ -54,6 +54,8 @@ AnnotationConfigApplicationContext appobj = new AnnotationConfigApplicationConte
 	  }
 	
 	
+	
+	
 	@RequestMapping("/Home")
     public ModelAndView Home() {
 	    return new ModelAndView("Home");
@@ -204,11 +206,14 @@ AnnotationConfigApplicationContext appobj = new AnnotationConfigApplicationConte
 		 
 		 
 		 
-		 @RequestMapping("/listPost/{id}")
-		 public ModelAndView pos(@PathVariable(value="id")int id)
+		 
+		 
+		 @RequestMapping("/listPost")
+		 public ModelAndView pos(HttpServletRequest request)
 		 {
+			 int id=Integer.parseInt(request.getParameter("id"));
 			Product pr=pd.prodbyid(id); 
-			return new ModelAndView("ProdDesc","des",pr);
+			return new ModelAndView("ProductsView","des",pr);
 		 }
 		
 		 @RequestMapping("/admin/product/delete/{id}")

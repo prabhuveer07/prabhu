@@ -3,8 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<%@include file="/WEB-INF/views/header.jsp" %>
-
+ 
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>RIDER GEAR</title>
 <meta charset="utf-8">
@@ -27,53 +27,12 @@ height:400px;
   }
   </style>
 </head>
+
 <body>
+<%@include file="/WEB-INF/views/header.jsp" %> 
+NAME : ${des.name}<br>
+DETAILS :${des.name}<br>
 
-
-       
-   
-
-<div class="container">
-
-  <h1 style="color:yellow;"><em>RIDER GEAR</em></h1>
-  <p style="color:yellow;"><em>PREMIUM MOTOR SPORT GEAR</em></p>
-</div>
-
-
-
-
-<div id="Categories" class="mailbox col-sm-6 col-sm-offset-3">
-<div class="panel panel-default">
-<div class="panel-heading">
-<title>CATEGORIES</title>
-<table border="0" class="table table-striped table-hover" >
-<tr>
-
-            <th>manufacturer</th>
-			<th>name</th>
-			<th>price</th>
-</tr>
-
-<c:forEach items="${cat}" var="lion">
-
-<tr>
-         <td>${lion.getManufacturer() }</td>
-         <td>${lion.getName() }</td>
-         <td>${lion.getPrice() }</td>
-         
-         <td>
-         <a href="listPost?id=${lion.getId()}"><span class="glyphicon glyphicon-camera"></span></a>
-         </td>
-         
-         
-         
-   </tr>
-</c:forEach>
-</table>
-</div>
-</div>
-
-</div>
-
+<img src="<c:url value="/resources/image/${des.getId()}.jpg"/>"/>
 </body>
 </html>
